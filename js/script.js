@@ -41,8 +41,6 @@ function titleClickHandler(event){
   console.log('Article is visible');
 }
 
-
-
 const optArticleSelector = '.post',
 optTitleSelector = '.post-title',
 optTitleListSelector = '.titles';
@@ -56,11 +54,10 @@ function generateTitleLinks(){
   titleList.innerHTML = '';
   
 /* find all the articles and save them to variable: articles */
-
-  
+ 
   /* [DONE] for each article */
 
-  const articles = document.querySelectorAll('optArticleSelector');
+  const articles = document.querySelectorAll(optArticleSelector);
   let html = '';
   for(let article of articles){
     
