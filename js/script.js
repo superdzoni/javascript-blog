@@ -103,7 +103,7 @@ function generateTags(){
 
   /* [DONE] START LOOP: for every article: */
 
-  for(let the article of articles){
+  for(let article of articles){
 
     /* [DONE] find tags wrapper */
 
@@ -113,23 +113,42 @@ function generateTags(){
 
     let html = '';
 
-    /* get tags from data-tags attribute */
+    /* [DONE] get tags from data-tags attribute */
 
-    const articleSelector = article.getAttribute('articleTags');
+    const articleTags = article.getAttribute('articleTags');
 
-    /* split tags into array */
+    /* [DONE] split tags into array */
+
+    const articleTagsArray = articleTags.split(' ');
+    console.log(articleTagsArray);
 
     /* START LOOP: for each tag */
 
-      /* generate HTML of the link */
+    for(let tag of articleTagsArray){
+      console.log(tag);
 
-      /* add generated code to html variable */
+      /* [DONE] generate HTML of the link */
 
-    /* END LOOP: for each tag */
+      const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+      console.log('Created HTML of the link');
+
+      /* [DONE] add generated code to html variable */
+
+      html = html + linkHTML;
+      console.log(html);
+
+      /* END LOOP: for each tag */
+
+    }
+
+    /* [DONE] insert HTML of all the links into the tags wrapper */
+
+    titleList.innerHTML = html;
+
   }
-    /* insert HTML of all the links into the tags wrapper */
 
   /* END LOOP: for every article: */
+
 }
 
 generateTags();
