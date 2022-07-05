@@ -213,6 +213,7 @@ function tagClickHandler(event){
 }
 
 
+
 function addClickListenersToTags(){
   /* find all links to tags */
 
@@ -233,3 +234,51 @@ function addClickListenersToTags(){
 
 
 addClickListenersToTags();
+
+const optArticleAuthorSelector = '.post-author .authors';
+
+function generateAuthors(){
+  console.log('Authors were generated');
+
+  /* [DONE] Find all articles */
+
+  const articles = document.querySelectorAll(optArticleSelector);
+  console.log('Articles were found');
+
+  /* [DONE] Start loop for every article */
+
+  for(let article of articles){
+
+    /* [DONE] find authors wrapper */
+
+    const titleList = article.querySelector(optArticleAuthorSelector);
+
+    /* [DONE] make html variable with empty string */
+
+    let html = '';
+
+    /* [DONE] get authors from data-author attribute */
+
+    const articleAuthors = article.getAttribute('data-author');
+
+    /* [DONE] generate HTML of the link */
+
+    const linkHTML = '<li><a href ="#' + articleAuthors + '"></a></li>';
+    console.log('Created html of the link');
+
+    /* [DONE] add generated code to html variable */
+
+    html = html + linkHTML;
+    console.log(html);
+
+    /* [DONE] insert HTML of all the links into the authors wrapper */
+
+    titleList.innerHTML = html;
+
+    /* [DONE] End loop for every article */
+
+  }
+}
+
+generateAuthors();
+
