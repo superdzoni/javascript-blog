@@ -212,6 +212,7 @@ function tagClickHandler(event){
 
 }
 
+
 function addClickListenersToTags(){
   /* find all links to tags */
 
