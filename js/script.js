@@ -131,7 +131,7 @@ function generateTags(){
 
       /* [DONE] generate HTML of the link */
 
-      const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li>';
+      const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li> ';
       console.log('Created HTML of the link');
 
       /* [DONE] add generated code to html variable */
@@ -212,12 +212,10 @@ function tagClickHandler(event){
 
 }
 
-
-
 function addClickListenersToTags(){
   /* find all links to tags */
 
-  const allTagLinks = document.querySelectorAll('a[href^="3tag-"]');
+  const allTagLinks = document.querySelectorAll('a[href^="#tag-"]');
 
   /* START LOOP: for each link */
 
@@ -252,6 +250,7 @@ function generateAuthors(){
     /* [DONE] find authors wrapper */
 
     const titleList = article.querySelector(optArticleAuthorSelector);
+    console.log(article);
 
     /* [DONE] make html variable with empty string */
 
@@ -290,7 +289,7 @@ function authorClickHandler(event){
 
   /* [DONE] make a new constant named "ClickedElement" and give it value of "this" */
 
-  const clickedElement = ('this');
+  const clickedElement = (this);
   console.log('Author was clicked');
 
   /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
