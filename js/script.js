@@ -215,12 +215,19 @@ function tagClickHandler(event){
 function addClickListenersToTags(){
   /* find all links to tags */
 
+  const allTagLinks = document.querySelectorAll('a[href^="3tag-"]');
+
   /* START LOOP: for each link */
+
+  for(let allTagLink of allTagLinks){
 
     /* add tagClickHandler as event listener for that link */
 
-  /* END LOOP: for each link */
+    allTagLink.addEventListener('click', tagClickHandler);
+    console.log(allTagLink);
 
+  /* END LOOP: for each link */
+  }
 }
 
 
