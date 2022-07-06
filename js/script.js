@@ -1,5 +1,11 @@
 'use strict';
 
+const optArticleSelector = '.post',
+  optTitleSelector = '.post-title',
+  optTitleListSelector = '.titles',
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorSelector = '.post-author';
+
 function titleClickHandler(event){
   event.preventDefault();
   const clickedElement = this;
@@ -41,11 +47,6 @@ function titleClickHandler(event){
   console.log('Article is visible');
 }
 
-const optArticleSelector = '.post',
-  optTitleSelector = '.post-title',
-  optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorSelector = '.post-author';
 
 function generateTitleLinks(customSelector = ''){
   console.log('Title List was generated');
@@ -193,15 +194,15 @@ function tagClickHandler(event){
 
   /* [DONE] find all tag links with "href" attribute equal to the "href" constant */
 
-  const TagLinks = document.querySelectorAll('a[href="' + href + '"]');
+  const tagLinks = document.querySelectorAll('a[href="' + href + '"]');
 
   /* [DONE] START LOOP: for each found tag link */
 
-  for(let TagLink of TagLinks){
+  for(let tagLink of tagLinks){
 
     /* [DONE] add class active */
 
-    TagLink.classList.add('active');
+    tagLink.classList.add('active');
 
     /* [DONE] END LOOP: for each found tag link */
 
@@ -230,7 +231,6 @@ function addClickListenersToTags(){
   /* END LOOP: for each link */
   }
 }
-
 
 addClickListenersToTags();
 
@@ -262,7 +262,7 @@ function generateAuthors(){
 
     /* [DONE] generate HTML of the link */
 
-    const linkHTML = '<a href ="#' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
+    const linkHTML = '<a href ="#author' + articleAuthor + '"><span>' + articleAuthor + '</span></a>';
     console.log('Created html of the link');
 
     /* [DONE] add generated code to html variable */
@@ -321,17 +321,17 @@ function authorClickHandler(event){
 
   /* [IN PROGRESS] find all author links with href attribute equal to the href constant */
 
-  const AuthorLinks = document.querySelectorAll('a[href="' + href + '"]');
-  console.log(AuthorLinks);
+  const authorLinks = document.querySelectorAll('a[href="' + href + '"]');
+  console.log(authorLinks);
 
   /* [DONE] start loop for each found author link */
 
-  for(let AuthorLink of AuthorLinks){
+  for(let authorLink of authorLinks){
 
     /* [DONE] add class active */
 
-    AuthorLink.classList.add('active');
-    console.log(AuthorLink);
+    authorLink.classList.add('active');
+    console.log(authorLink);
 
     /* [DONE] end loop for each found author link */
 
