@@ -162,7 +162,7 @@ function tagClickHandler(event){
 
   /* [DONE] make new constant named "clickedElement" and give it the value of "this" */
 
-  const clickedElement = ('this');
+  const clickedElement = this;
   console.log('Tag was clicked');
 
   /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
@@ -289,7 +289,7 @@ function authorClickHandler(event){
 
   /* [DONE] make a new constant named "ClickedElement" and give it value of "this" */
 
-  const clickedElement = (this);
+  const clickedElement = this;
   console.log('Author was clicked');
 
   /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
