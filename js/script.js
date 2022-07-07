@@ -210,7 +210,7 @@ function generateTags(){
   }
 
   /* [NEW] add html from allTagsHTML to tagList */
-  tagList.innerHTML = tagLinkHTML;
+  tagList.innerHTML = allTagsHTML;
 }
 
 generateTags();
