@@ -115,7 +115,7 @@ function calculateTagsParams(tags){
   return params;
 }
 
-function CalculateTagClass(count, params){
+function calculateTagClass(count, params){
   const normalizedCount = count - params.min;
   const normalizedMax = params.max - params.min;
   const percentage = normalizedCount / normalizedMax;
@@ -124,7 +124,6 @@ function CalculateTagClass(count, params){
 }
 
 function generateTags(){
-  // console.log('Tags were generated');
 
   /* [NEW] create a new variable allTags with an empty object */
 
@@ -133,7 +132,6 @@ function generateTags(){
   /* [DONE] find all articles */
 
   const articles = document.querySelectorAll(optArticleSelector);
-  // console.log('Articles were found');
 
   /* [DONE] START LOOP: for every article: */
 
@@ -154,22 +152,21 @@ function generateTags(){
     /* [DONE] split tags into array */
 
     const articleTagsArray = articleTags.split(' ');
-    // console.log(articleTagsArray);
 
     /* START LOOP: for each tag */
 
     for(let tag of articleTagsArray){
-      console.log(tag);
+      // console.log(tag);
 
       /* [DONE] generate HTML of the link */
 
       const linkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a></li> ';
-      console.log('Created HTML of the link');
+      // console.log('Created HTML of the link');
 
       /* [DONE] add generated code to html variable */
 
       html = html + linkHTML;
-      console.log(html);
+      // console.log(html);
 
       /* END LOOP: for each tag */
 
@@ -203,7 +200,8 @@ function generateTags(){
   for(let tag in allTags){
 
     /* [NEW] generate code of a link and add it to allTagsHTML */
-    const tagLinkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '</span></a>(' + CalculateTagClass(allTags[tag], tagsParams) + ')</li>';
+    // const tagLinkHTML = '<li><a href="#tag-' + tag + '"><span>' + tag + '(' + CalculateTagClass(allTags[tag], tagsParams) + ')</span></a></li>';
+    const tagLinkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a>(' + allTags[tag] + ')</li>';
     allTagsHTML += tagLinkHTML;
 
   /* [NEW] end loop: for each tag in allTags: */
@@ -293,7 +291,8 @@ function addClickListenersToTags(){
 addClickListenersToTags();
 
 function generateAuthors(){
-  console.log('Authors were generated');
+  //console.log('Authors were generated');
+  let allAuthors = { };
 
   /* [DONE] Find all articles */
 
@@ -327,6 +326,7 @@ function generateAuthors(){
 
     html = html + linkHTML;
     console.log(html);
+
 
     /* [DONE] insert HTML of all the links into the authors wrapper */
 
