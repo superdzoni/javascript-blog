@@ -349,7 +349,7 @@ function generateAuthors(){
   const authorList = document.querySelector(optArticleAuthorsListSelector);
   let allAuthorsHTML = '';
   for(let author in allAuthors){
-    const authorLinkHTML = '<li><a href="#author-' + author + '">' + author + '</a>(' + allAuthors[author] + ')</li>';
+    const authorLinkHTML = '<li><a href="#author' + author + '">' + author + '</a>(' + allAuthors[author] + ')</li>';
     allAuthorsHTML += authorLinkHTML;
   }
   authorList.innerHTML = allAuthorsHTML;
@@ -366,22 +366,22 @@ function authorClickHandler(event){
   /* [DONE] make a new constant named "ClickedElement" and give it value of "this" */
 
   const clickedElement = this;
-  console.log(clickedElement);
+  // console.log(clickedElement);
 
   /* [DONE] make a new constant "href" and read the attribute "href" of the clicked element */
 
   const href = clickedElement.getAttribute('href');
-  console.log(href);
+  // console.log(href);
 
   /* [DONE] make a new constant author and extract author from the href  constant */
 
   const author = href.replace('#author', '');
-  console.log(author);
+  // console.log(author);
 
   /* [DONE] find all authors links with class active */
 
   const activeAuthorLinks = document.querySelectorAll('a.active[href^="#author"]');
-  console.log(activeAuthorLinks);
+  // console.log(activeAuthorLinks);
 
   /* [DONE] start loop for each active author link */
 
@@ -398,7 +398,7 @@ function authorClickHandler(event){
   /* [DONE] find all author links with href attribute equal to the href constant */
 
   const authorLinks = document.querySelectorAll('a[href="' + href + '"]');
-  console.log(authorLinks);
+  // console.log(authorLinks);
 
   /* [DONE] start loop for each found author link */
 
@@ -407,7 +407,7 @@ function authorClickHandler(event){
     /* [DONE] add class active */
 
     authorLink.classList.add('active');
-    console.log(authorLink);
+    // console.log(authorLink);
 
     /* [DONE] end loop for each found author link */
 
@@ -432,7 +432,7 @@ function addClickListenersToAuthors(){
     /* [DONE] add AuthorClickHandler as event listener for that link */
 
     allAuthorLink.addEventListener('click', authorClickHandler);
-    console.log(allAuthorLink);
+    // console.log(allAuthorLink);
 
   /* [DONE] end loop: for each link */
   }
